@@ -36,7 +36,7 @@
     "storybook-native": "storybook -c .storybook.native start -p 7007 --haul ./.storybook.native/webpack.haul.storybook.js --platform all",
     "preios": "yarn fetch-fonts",
     "ios": "react-native run-ios --no-packager",
-    "ios:logs" : "yarn ios && react-native log-ios",
+    "ios:logs": "yarn ios && react-native log-ios",
     "ios:build-lib": "lerna run --scope @times-components/ios-app build:all --stream",
     "ios:app": "cd ios-app && yarn start",
     "start-emulator": "./lib/start_android_emulator.sh",
@@ -59,7 +59,9 @@
     "commit": "git-cz",
     "prepublishOnly": "lerna run prepublishOnly",
     "test:e2e": "yarn bundle && lerna run test:integration --stream",
-    "test:e2e:debug": "yarn bundle && lerna run test:integration:debug --stream"
+    "test:e2e:debug": "yarn bundle && lerna run test:integration:debug --stream",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "jest": {
     "preset": "react-native",
@@ -142,7 +144,7 @@
     "prop-types": "15.6.2",
     "react": "16.6.3",
     "react-dom": "16.6.3",
-    "react-native": "0.55.4",
+    "react-native": "0.60.0",
     "react-native-storybook-loader": "1.5.1",
     "react-native-web": "0.9.0",
     "react-native-web-image-loader": "0.0.6",
@@ -159,7 +161,9 @@
     "babel-preset-es2015": "6.24.1",
     "expo": "30.0.0",
     "react-art": "16.6.3",
-    "react-native": "0.55.4",
-    "react-native-showcase-loader": "1.1.0"
-  }
+    "react-native": "0.60.0",
+    "react-native-showcase-loader": "1.1.0",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
