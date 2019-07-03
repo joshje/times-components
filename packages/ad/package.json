@@ -16,7 +16,9 @@
     "test:all": "yarn test:android --coverage && yarn test:ios --coverage && yarn test:web --coverage",
     "cleanup-dist": "rm -rf dist",
     "transpile": "yarn cleanup-dist && babel src -d dist",
-    "bundle": "NODE_ENV=production webpack -p"
+    "bundle": "NODE_ENV=production webpack -p",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "react-native-web",
@@ -63,7 +65,8 @@
     "@times-components/utils": "4.0.17",
     "@times-components/watermark": "2.1.64",
     "prop-types": "15.6.2",
-    "react-broadcast": "0.5.2"
+    "react-broadcast": "0.5.2",
+    "snyk": "^1.189.0"
   },
   "peerDependencies": {
     "react": ">=16.5",
@@ -73,5 +76,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "snyk": true
 }
