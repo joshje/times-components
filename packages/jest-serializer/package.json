@@ -13,7 +13,9 @@
     "test:web": "jest --config='./jest.config.web.js'",
     "prepublishOnly": "yarn transpile",
     "cleanup-dist": "rm -rf dist",
-    "transpile": "yarn cleanup-dist && babel src -d dist"
+    "transpile": "yarn cleanup-dist && babel src -d dist",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -51,7 +53,8 @@
     "enzyme-to-json": "3.3.4",
     "hyphenate-style-name": "1.0.2",
     "lodash.isequal": "4.4.0",
-    "lodash.omitby": "4.6.0"
+    "lodash.omitby": "4.6.0",
+    "snyk": "^1.189.0"
   },
   "peerDependencies": {
     "react": ">=16",
@@ -61,5 +64,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "snyk": true
 }
