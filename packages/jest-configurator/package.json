@@ -13,7 +13,9 @@
     "pretest": "./setup.sh",
     "test": "jest",
     "cleanup-dist": "rm -rf dist",
-    "transpile": "yarn cleanup-dist && babel src --ignore node_modules,__tests__ -d lib"
+    "transpile": "yarn cleanup-dist && babel src --ignore node_modules,__tests__ -d lib",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -66,7 +68,8 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "23.3.0",
     "jest-plugin-context": "2.6.0",
-    "jest-plugins": "2.9.0"
+    "jest-plugins": "2.9.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@thetimes/jest-lint": "*",
@@ -87,5 +90,6 @@
   },
   "resolutions": {
     "minimatch": "3.0.4"
-  }
+  },
+  "snyk": true
 }
