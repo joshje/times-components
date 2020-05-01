@@ -13,7 +13,9 @@
     "prepublishOnly": "yarn transpile && yarn bundle",
     "cleanup-dist": "rm -rf dist",
     "transpile": "yarn cleanup-dist && babel src -d dist --copy-files",
-    "bundle": "NODE_ENV=production webpack -p"
+    "bundle": "NODE_ENV=production webpack -p",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "jest": {
     "preset": "react-native",
@@ -80,7 +82,8 @@
     "react": "16.6.3",
     "react-apollo": "2.1.4",
     "react-test-renderer": "16.6.3",
-    "zen-observable": "0.8.9"
+    "zen-observable": "0.8.9",
+    "snyk": "^1.316.1"
   },
   "peerDependencies": {
     "react": ">=16.5",
@@ -90,5 +93,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "snyk": true
 }
