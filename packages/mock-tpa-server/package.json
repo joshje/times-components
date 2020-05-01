@@ -9,7 +9,9 @@
     "depcheck": "depcheck --ignores='babel-*,depcheck,**/eslint*,graphql,jest,prettier,webpack*' --ignore-bin-package=false --skip-missing",
     "lint": "eslint . && yarn prettier:diff && yarn depcheck",
     "transpile": "babel src -d dist --copy-files",
-    "test": "jest __tests__/*"
+    "test": "jest __tests__/*",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -44,9 +46,11 @@
     "@times-components/schema": "0.1.20",
     "apollo-server": "2.2.6",
     "graphql": "14.0.2",
-    "graphql-tools": "4.0.3"
+    "graphql-tools": "4.0.3",
+    "snyk": "^1.316.1"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "snyk": true
 }
